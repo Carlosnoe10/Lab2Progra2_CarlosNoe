@@ -8,13 +8,15 @@ package lab2progra2_carlosnoé;
 public class Solares {
 public double ancho;
 public double largo;
+private String Estado;
 
 public Solares(){
     
 }
-public Solares(double ancho, double largo){
+public Solares(double ancho, double largo, String Estado){
     this.ancho= ancho;
     this.largo= largo;
+    this.Estado= Estado;
 }
     public double getAncho() {
         return ancho;
@@ -30,6 +32,14 @@ public Solares(double ancho, double largo){
 
     public void setLargol(int largol) {
         this.largo = largol;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
 
 }

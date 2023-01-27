@@ -15,7 +15,7 @@ public int NumeroBan;
 public int NumeroCuart;
 private String Estado;
 
-    public Casas(int NumeroC, int NumeroBloq, double ancho, double largo, int NumeroBan, int NumeroCuart, Color color){
+    public Casas(int NumeroC, int NumeroBloq, double ancho, double largo, int NumeroBan, int NumeroCuart, Color color, String Estado){
         this.NumeroC= NumeroC;
         this.NumeroBloq= NumeroBloq;
         this.ancho= ancho;
@@ -23,6 +23,7 @@ private String Estado;
         this.NumeroCuart= NumeroCuart;
         this.largo= largo;
         this.color= color;
+        this.Estado= Estado;
         
     }
     public Casas(){
@@ -48,7 +49,7 @@ private String Estado;
         return ancho;
     }
 
-    public void setAncho(int ancho) {
+    public void setAncho(double ancho) {
         this.ancho = ancho;
     }
 
