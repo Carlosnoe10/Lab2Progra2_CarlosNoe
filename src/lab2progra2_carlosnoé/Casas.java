@@ -57,7 +57,7 @@ private String Estado;
         return largo;
     }
 
-    public void setLargo(int largo) {
+    public void setLargo(double largo) {
         this.largo = largo;
     }
 

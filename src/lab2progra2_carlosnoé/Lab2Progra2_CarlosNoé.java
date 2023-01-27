@@ -319,6 +319,8 @@ public class Lab2Progra2_CarlosNoé {
 
     public static void MODCasas() {
         Scanner k1ng = new Scanner(System.in);
+        Scanner Estado = new Scanner(System.in);
+
         System.out.println("1. Mod Numero Casa \n"
                 + "2. Mod Numero Bloque \n"
                 + "3. Mod Ancho \n"
@@ -380,13 +382,13 @@ public class Lab2Progra2_CarlosNoé {
                                 Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont12 + ". " + Propiedades.get(i));
-                                    cont1 += 1;
+                                    cont12 += 1;
                                 }
                             }
-                            System.out.println("Ingrese la casa que desea cambiar el numero bloque: ");
+                            System.out.println("Ingrese la casa que desea cambiar el ancho: ");
                             int cheiss12 = k1ng.nextInt();
                             if (cheiss12 < cont12) {
-                                System.out.println("Ingrese el nuevo numero de bloque");
+                                System.out.println("Ingrese el nuevo numero de ancho");
                                 double new12 = k1ng.nextDouble();
                                 ((Casas) Propiedades.get(cheiss12)).setAncho(new12);
                             } else {
@@ -395,14 +397,109 @@ public class Lab2Progra2_CarlosNoé {
                             }
                             break;
                         case 4:
+                            int cont123 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Casas) {
+                                    System.out.println(cont123 + ". " + Propiedades.get(i));
+                                    cont123 += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar el largo: ");
+                            int cheiss123 = k1ng.nextInt();
+                            if (cheiss123 < cont123) {
+                                System.out.println("Ingrese el nuevo numero de largo");
+                                double new12 = k1ng.nextDouble();
+                                ((Casas) Propiedades.get(cheiss123)).setLargo(new12);
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }
                             break;
                         case 5:
+                            int cont1234 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Casas) {
+                                    System.out.println(cont1234 + ". " + Propiedades.get(i));
+                                    cont1234 += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar el numero de banio: ");
+                            int cheiss1234 = k1ng.nextInt();
+                            if (cheiss1234 < cont1234) {
+                                System.out.println("Ingrese el nuevo numero de banios");
+                                int new12 = k1ng.nextInt();
+                                ((Casas) Propiedades.get(cheiss1234)).setNumeroBan(new12);
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }
                             break;
                         case 6:
+                            int cont1231 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Casas) {
+                                    System.out.println(cont1231 + ". " + Propiedades.get(i));
+                                    cont1231 += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar el largo: ");
+                            int cheiss1231 = k1ng.nextInt();
+                            if (cheiss1231 < cont1231) {
+                                System.out.println("Ingrese el nuevo numero de largo");
+                                int new12 = k1ng.nextInt();
+                                ((Casas) Propiedades.get(cheiss1231)).setNumeroBloq(new12);
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }
                             break;
                         case 7:
+                            int cont12311 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Casas) {
+                                    System.out.println(cont12311 + ". " + Propiedades.get(i));
+                                    cont12311 += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar el color: ");
+                            int cheiss12311 = k1ng.nextInt();
+                            if (cheiss12311 < cont12311) {
+                                Color color = JColorChooser.showDialog(null, "Elija un color", Color.yellow);
+
+                                ((Casas) Propiedades.get(cheiss12311)).setColor(color);
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }
                             break;
                         case 8:
+                            int cont1212 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Casas) {
+                                    System.out.println(cont1212 + ". " + Propiedades.get(i));
+                                    cont1212 += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar el ancho: ");
+                            int cheiss1212 = k1ng.nextInt();
+                            if (cheiss1212 < cont1212) {
+                                System.out.println("Ingrese el estado: ");
+                                String estado = Estado.nextLine();
+                                if ((estado.equalsIgnoreCase("Listas")) && (estado.equalsIgnoreCase("Demolicion")) && (estado.equalsIgnoreCase("construccion"))) {
+                                    ((Casas) Propiedades.get(cheiss1212)).setEstado(estado);
+                                } else {
+                                    w--;
+                                }
+
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }
                             break;
                     }
                 } else {
@@ -414,9 +511,90 @@ public class Lab2Progra2_CarlosNoé {
     }
 
     public static void MODEdificios() {
+Scanner k1ng = new Scanner(System.in);
+        Scanner Estado = new Scanner(System.in);
 
-    }
-
+        System.out.println("1. Mod Numero edificio \n"
+                + "2. Mod cantidad locales \n"
+                + "3. Mod Direccion de referencia \n"
+                + "4. Mod Estado \n");
+        int Mas = k1ng.nextInt();
+        for (int w = 0; w < 1; w++) {
+            while (Mas != 5) {
+                if ((Mas > 0) && (Mas < 5)) {
+                    w++;
+                    switch (Mas) {
+                        case 1:
+                            int cont = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Edificios) {
+                                    System.out.println(cont + ". " + Propiedades.get(i));
+                                    cont += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar el numero de casa: ");
+                            int cheiss = k1ng.nextInt();
+                            if (cheiss < cont) {
+                                System.out.println("Ingrese el nuevo Numero edificio");
+                                int new1 = k1ng.nextInt();
+                                ((Edificios) Propiedades.get(cheiss)).setNumeroedificio(new1);
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }
+                            break;
+                        case 2:
+                            int cont1 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Edificios) {
+                                    System.out.println(cont1 + ". " + Propiedades.get(i));
+                                    cont1 += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar el numero de casa: ");
+                            int cheiss1 = k1ng.nextInt();
+                            if (cheiss1 < cont1) {
+                                System.out.println("Ingrese el nuevo Cantidad de locales");
+                                int new1 = k1ng.nextInt();
+                                ((Edificios) Propiedades.get(cheiss1)).setCantidadLocales(new1);
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }                            
+                            break;
+                        case 3:
+                            int cont2 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                Propiedades.get(i);
+                                if (Propiedades.get(i) instanceof Edificios) {
+                                    System.out.println(cont2 + ". " + Propiedades.get(i));
+                                    cont2 += 1;
+                                }
+                            }
+                            System.out.println("Ingrese la casa que desea cambiar la dirrecion de la casa: ");
+                            int cheiss2 = k1ng.nextInt();
+                            if (cheiss2 < cont2) {
+                                System.out.println("Ingrese la nueva dirreccion");
+                                String new1 = Estado.nextLine();
+                                ((Edificios) Propiedades.get(cheiss2)).setDirrecionRef(new1);
+                            } else {
+                                System.out.println("Error");
+                                w--;
+                            }
+                            break;
+                        case 4:
+                            break;
+                    }
+                    } else {
+                    w--;
+                    System.out.println("Termino Incorrecto");
+                }
+            }
+        }
+    } 
+    
     public static void MODSolares() {
 
     }
