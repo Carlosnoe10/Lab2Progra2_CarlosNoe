@@ -12,13 +12,14 @@ public class Lab2Progra2_CarlosNoé {
 
     public static void main(String[] args) {
         Scanner k1ng = new Scanner(System.in);
+        Admin();
         System.out.println("--Bienvenido al menu--");
         System.out.println("Ingrese el numero adecuado a la opcion que desea ingresar: ");
         System.out.println("1. Registro de Inmueble/Solar");
         System.out.println("2. Manejo de Estados");
         System.out.println("3. Log In/Sign Up");
         System.out.println("4. Salir");
-
+        
         int menu = k1ng.nextInt();
         for (int x = 0; x < 1; x++) {
             while (menu != 4) {
@@ -211,6 +212,67 @@ public class Lab2Progra2_CarlosNoé {
         System.out.println("Fin");
     }
 
+    public static void Admin(){
+        String nombre="??";
+        int anios=19;
+        String usuario="admin";
+        String Contra="admin1234";
+        Usuario cas1 = new Usuario(nombre, anios, usuario, Contra);
+        ListaUsu.add(cas1);
+    } 
+    
+    public static void LoginSingIN() {
+        Scanner k1ng = new Scanner(System.in);
+        Scanner Estado = new Scanner(System.in);
+        System.out.println("Bienvenido al login/sing up \n"
+                + "1. Sing up"
+                + "2. Log in");
+
+        int menu = k1ng.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 3) {
+                if ((menu > 0) && (menu < 3)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            login();
+                            break;
+                        case 2:
+                            Usuarioss();
+                            break;
+                    }
+                } else {
+                    x--;
+                    System.out.println("Numero invalido");
+                }
+            }
+        }
+    }
+
+    public static void login() {
+        Scanner k1ng = new Scanner(System.in);
+        Scanner Estado = new Scanner(System.in);
+        System.out.println("Ingrese su nombre de usuario: ");
+        String nombre = k1ng.nextLine();
+        System.out.println("Ingrese la contrasenya: ");
+        String contrasenya=Estado.nextLine();
+        int num=BaseDeDatos(nombre,contrasenya);
+    }
+
+    public static int BaseDeDatos(String Usuario, String contrasenya) {
+            for (int i = 0; i < ListaUsu.size(); i++) {
+                ListaUsu.get(i);
+                if (ListaUsu.get(i).getUserName().equalsIgnoreCase(Usuario)&&(ListaUsu.get(i).getContrasenya().equalsIgnoreCase(contrasenya))) {
+                    System.out.println("Bienvenido");
+                    return 1;
+                }else{
+                    System.out.println("Usuario o contrasenya Incorrectos");
+                    return 0;
+                }
+            }
+            return 0;
+        } 
+        
     public static void Usuarioss() {
         Scanner k1ng = new Scanner(System.in);
         Scanner Estado = new Scanner(System.in);

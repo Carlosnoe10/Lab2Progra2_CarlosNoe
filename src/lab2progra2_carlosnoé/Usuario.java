@@ -16,6 +16,7 @@ public class Usuario {
         this.UserName= UserName;
         this.edad= edad;
         this.Nombre= Nombre;
+
     }    
     
     
