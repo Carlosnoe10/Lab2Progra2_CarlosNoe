@@ -22,7 +22,7 @@ public Solares(double ancho, double largo, String Estado){
         return ancho;
     }
 
-    public void setAncho(int ancho) {
+    public void setAncho(double ancho) {
         this.ancho = ancho;
     }
 
@@ -30,7 +30,7 @@ public Solares(double ancho, double largo, String Estado){
         return largo;
     }
 
-    public void setLargol(int largol) {
+    public void setLargol(double largol) {
         this.largo = largol;
     }
 
