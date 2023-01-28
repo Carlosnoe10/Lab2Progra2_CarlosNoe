@@ -51,6 +51,11 @@ public class Usuario {
     public void setContrasenya(String Contrasenya) {
         this.Contrasenya = Contrasenya;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "Nombre=" + Nombre + ", edad=" + edad + ", UserName=" + UserName + ", Contrasenya=" + Contrasenya + '}';
+    }
     
     
     

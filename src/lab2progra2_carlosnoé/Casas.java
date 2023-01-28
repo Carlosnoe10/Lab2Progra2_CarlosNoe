@@ -93,5 +93,10 @@ private String Estado;
         this.Estado = Estado;
     }
 
+    @Override
+    public String toString() {
+        return "Casas{" + "NumeroC=" + NumeroC + ", NumeroBloq=" + NumeroBloq + ", ancho=" + ancho + ", largo=" + largo + ", color=" + color + ", NumeroBan=" + NumeroBan + ", NumeroCuart=" + NumeroCuart + ", Estado=" + Estado + '}';
+    }
+
 
 }

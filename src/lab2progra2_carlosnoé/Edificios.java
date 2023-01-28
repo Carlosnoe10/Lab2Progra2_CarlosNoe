@@ -50,4 +50,9 @@ public class Edificios {
         this.Estado = Estado;
     }
 
+    @Override
+    public String toString() {
+        return "Edificios{" + "Numeroedificio=" + Numeroedificio + ", CantidadLocales=" + CantidadLocales + ", DirrecionRef=" + DirrecionRef + ", Estado=" + Estado + '}';
+    }
+
 }

@@ -42,5 +42,10 @@ public Solares(double ancho, double largo, String Estado){
         this.Estado = Estado;
     }
 
+    @Override
+    public String toString() {
+        return "Solares{" + "ancho=" + ancho + ", largo=" + largo + ", Estado=" + Estado + '}';
+    }
+
 }
 
