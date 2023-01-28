@@ -338,7 +338,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 1:
                             int cont = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont + ". " + Propiedades.get(i));
                                     cont += 1;
@@ -379,7 +378,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 3:
                             int cont12 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont12 + ". " + Propiedades.get(i));
                                     cont12 += 1;
@@ -399,7 +397,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 4:
                             int cont123 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont123 + ". " + Propiedades.get(i));
                                     cont123 += 1;
@@ -419,7 +416,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 5:
                             int cont1234 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont1234 + ". " + Propiedades.get(i));
                                     cont1234 += 1;
@@ -439,7 +435,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 6:
                             int cont1231 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont1231 + ". " + Propiedades.get(i));
                                     cont1231 += 1;
@@ -459,7 +454,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 7:
                             int cont12311 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont12311 + ". " + Propiedades.get(i));
                                     cont12311 += 1;
@@ -479,7 +473,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 8:
                             int cont1212 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Casas) {
                                     System.out.println(cont1212 + ". " + Propiedades.get(i));
                                     cont1212 += 1;
@@ -546,7 +539,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 2:
                             int cont1 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Edificios) {
                                     System.out.println(cont1 + ". " + Propiedades.get(i));
                                     cont1 += 1;
@@ -566,7 +558,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 3:
                             int cont2 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Edificios) {
                                     System.out.println(cont2 + ". " + Propiedades.get(i));
                                     cont2 += 1;
@@ -586,7 +577,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 4:
                             int cont23 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Edificios) {
                                     System.out.println(cont23 + ". " + Propiedades.get(i));
                                     cont23 += 1;
@@ -631,7 +621,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 1:
                             int cont12 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Solares) {
                                     System.out.println(cont12 + ". " + Propiedades.get(i));
                                     cont12 += 1;
@@ -651,7 +640,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 2:
                             int cont123 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Solares) {
                                     System.out.println(cont123 + ". " + Propiedades.get(i));
                                     cont123 += 1;
@@ -671,7 +659,6 @@ public class Lab2Progra2_CarlosNoé {
                         case 3:
                             int cont23 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                Propiedades.get(i);
                                 if (Propiedades.get(i) instanceof Edificios) {
                                     System.out.println(cont23 + ". " + Propiedades.get(i));
                                     cont23 += 1;
@@ -701,10 +688,34 @@ public class Lab2Progra2_CarlosNoé {
 
     public static void EliminarCasa() {
         Scanner k1ng = new Scanner(System.in);
+        int cont23 = 0;
+        for (int i = 0; i < Propiedades.size(); i++) {
+            if (Propiedades.get(i) instanceof Casas) {
+                System.out.println(cont23 + ". " + Propiedades.get(i));
+                cont23 += 1;
+            }
+        }
+        System.out.println("Ingrese la casa que desea eliminar: ");
+        int cheiss23 = k1ng.nextInt();
+        if (cheiss23 < cont23) {
+            for (int i = 0; i < 1; i++) {   
+            System.out.println("Ingrese el nuevo estado ");
+            int  casaelm = k1ng.nextInt();
+            if (casaelm>0) {
+                Propiedades.remove(cont23);
+                i++;
+            }else{
+                i--;
+            }
+        }     
+        }
+    }
+
+    public static void EliminarEdificios() {
+                Scanner k1ng = new Scanner(System.in);
         Scanner Estado = new Scanner(System.in);
         int cont23 = 0;
         for (int i = 0; i < Propiedades.size(); i++) {
-            Propiedades.get(i);
             if (Propiedades.get(i) instanceof Edificios) {
                 System.out.println(cont23 + ". " + Propiedades.get(i));
                 cont23 += 1;
@@ -713,30 +724,113 @@ public class Lab2Progra2_CarlosNoé {
         System.out.println("Ingrese la casa que desea eliminar: ");
         int cheiss23 = k1ng.nextInt();
         if (cheiss23 < cont23) {
+            for (int i = 0; i < 1; i++) {   
             System.out.println("Ingrese el nuevo estado ");
-            String estado = Estado.nextLine();
-            if ((estado.equalsIgnoreCase("Listas")) && (estado.equalsIgnoreCase("Demolicion")) && (estado.equalsIgnoreCase("construccion"))) {
-                ((Edificios) Propiedades.get(cheiss23)).setEstado(estado);
-
-    }
-
-    public static void EliminarEdificios() {
-
+            int  casaelm = k1ng.nextInt();
+            if (casaelm>0) {
+                Propiedades.remove(cont23);
+                i++;
+            }else{
+                i--;
+            }
+        }     
+        }
     }
 
     public static void EliminarSolar() {
-
+        Scanner k1ng = new Scanner(System.in);
+        int cont23 = 0;
+        for (int i = 0; i < Propiedades.size(); i++) {
+            Propiedades.get(i);
+            if (Propiedades.get(i) instanceof Solares) {
+                System.out.println(cont23 + ". " + Propiedades.get(i));
+                cont23 += 1;
+            }
+        }
+        System.out.println("Ingrese la casa que desea eliminar: ");
+        int cheiss23 = k1ng.nextInt();
+        if (cheiss23 < cont23) {
+            for (int i = 0; i < 1; i++) {   
+            System.out.println("Ingrese el nuevo estado ");
+            int  casaelm = k1ng.nextInt();
+            if (casaelm>0) {
+                Propiedades.remove(cont23);
+                i++;
+            }else{
+                i--;
+            }
+        }     
+        }
     }
 
     public static void VenderCasa() {
+        int cont23=0;
+        Scanner k1ng = new Scanner(System.in);
+        for (int i = 0; i < Propiedades.size(); i++) {
+            if (Propiedades.get(i) instanceof Casas) {
+                System.out.println(cont23 + ". " + Propiedades.get(i));
 
+            }
+        }
+         for (int i = 0; i < 1; i++) {   
+        System.out.println("Ingrese la casa que desea Vender: ");
+        int cheiss23 = k1ng.nextInt();
+        if (cheiss23 > 0) {
+
+                Propiedades.remove(cheiss23);
+                i++;
+            }else{
+                i--;
+            }
+        }
     }
 
     public static void VenderEdificio() {
+        int cont23=0;
+        Scanner k1ng = new Scanner(System.in);
+        for (int i = 0; i < Propiedades.size(); i++) {
+            if (Propiedades.get(i) instanceof Edificios) {
+                System.out.println(cont23 + ". " + Propiedades.get(i));
 
+            }
+        }
+         for (int i = 0; i < 1; i++) {   
+        System.out.println("Ingrese el edificio que desea Vender: ");
+        int cheiss23 = k1ng.nextInt();
+        if (cheiss23 > 0) {
+
+                Propiedades.remove(cheiss23);
+                System.out.println("Vendido");
+                i++;
+            }else{
+                i--;
+            }
+        }
+    
     }
 
     public static void VenderSolar() {
+        int cont23=0;
+        Scanner k1ng = new Scanner(System.in);
+        for (int i = 0; i < Propiedades.size(); i++) {
+            if (Propiedades.get(i) instanceof Solares) {
+                System.out.println(cont23 + ". " + Propiedades.get(i));
 
-    }
+            }
+        }
+         for (int i = 0; i < 1; i++) {   
+        System.out.println("Ingrese el solar que desea Vender: ");
+        int cheiss23 = k1ng.nextInt();
+        if (cheiss23 > 0) {
+
+                Propiedades.remove(cheiss23);
+                System.out.println("Vendido");
+                i++;
+            }else{
+                i--;
+            }
+        }     
+        }
+    
+    
 }
