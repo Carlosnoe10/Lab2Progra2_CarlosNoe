@@ -7,12 +7,11 @@ import javax.swing.JColorChooser;
 
 public class Lab2Progra2_CarlosNoé {
 
-    ArrayList<Usuario> ListaUsu = new ArrayList();
+    static ArrayList<Usuario> ListaUsu = new ArrayList();
     static ArrayList Propiedades = new ArrayList();
 
     public static void main(String[] args) {
         Scanner k1ng = new Scanner(System.in);
-
         System.out.println("--Bienvenido al menu--");
         System.out.println("Ingrese el numero adecuado a la opcion que desea ingresar: ");
         System.out.println("1. Registro de Inmueble/Solar");
@@ -192,7 +191,8 @@ public class Lab2Progra2_CarlosNoé {
                             break;
 
                         case 2:
-
+                            System.out.println("Manejo de estados");
+                            ManejoDeEstados();
                             break;
                         case 3:
                             break;
@@ -200,7 +200,7 @@ public class Lab2Progra2_CarlosNoé {
                     }// switch menu p
                     System.out.println("--Bienvenido al menu--");
                     System.out.println("Ingrese el numero adecuado a la opcion que desea ingresar: ");
-
+                    menu = k1ng.nextInt();
                 } else {
                     System.out.println("Ingrese adecuadamente el numero");
                     x--;
@@ -209,6 +209,131 @@ public class Lab2Progra2_CarlosNoé {
         }//for
 
         System.out.println("Fin");
+    }
+
+    public static void Usuarioss() {
+        Scanner k1ng = new Scanner(System.in);
+        Scanner Estado = new Scanner(System.in);
+        for (int w = 0; w < 1; w++) {
+            System.out.println("Ingrese su nombre");
+            String nombre = k1ng.nextLine();
+            System.out.println("Ingrese los anios");
+            int anios = Estado.nextInt();
+            k1ng = new Scanner(System.in);
+            Estado = new Scanner(System.in);
+            System.out.println("Ingrese su nombre de usuario: ");
+            String usuario = k1ng.nextLine();
+            System.out.println("Ingrese su contrasenya: ");
+            String Contra = Estado.nextLine();
+            if (anios > 17) {
+                w++;
+                Usuario cas1 = new Usuario(nombre, anios, usuario, Contra);
+                ListaUsu.add(cas1);
+            } else {
+                w--;
+                System.out.println("Terminos Incorrectos");
+            }
+        }
+    }
+
+    public static void ManejoDeEstados() {
+        Scanner k1ng = new Scanner(System.in);
+        Scanner Estado = new Scanner(System.in);
+        System.out.println("Ingrese el tipo del estado que desea cambiar\n"
+                + "Opcion 1: Casas\n"
+                + "Opcion 2: Edificios\n"
+                + "Opcion 3: Solares\n");
+        int menu = k1ng.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 4) {
+                if ((menu > 0) && (menu < 4)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            int cont = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                if (Propiedades.get(i) instanceof Casas) {
+                                    System.out.println(cont + ". " + Propiedades.get(i));
+                                    cont += 1;
+                                }
+                                System.out.println("Ingrese el numero: ");
+                                int nume = k1ng.nextInt();
+                                if ((nume > 0) || (nume < cont)) {
+                                    System.out.println("Ingrese el nuevo estado: ");
+                                    String nam = Estado.nextLine();
+                                    ((Casas) Propiedades.get(nume)).setEstado(nam);
+                                    if ((nam.equalsIgnoreCase("Listas")) && (nam.equalsIgnoreCase("Demolicion")) && (nam.equalsIgnoreCase("construccion"))) {
+                                        ((Casas) Propiedades.get(nume)).setEstado(nam);
+                                    } else {
+                                        System.out.println("Variable invalida");
+                                        x--;
+                                    }
+                                } else {
+                                    System.out.println("Variable invalida");
+                                    i--;
+                                }
+                            }
+                            break;
+                        case 2:
+                            int cont1 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                if (Propiedades.get(i) instanceof Edificios) {
+                                    System.out.println(cont1 + ". " + Propiedades.get(i));
+                                    cont1 += 1;
+                                }
+                                System.out.println("Ingrese el numero: ");
+                                int nume = k1ng.nextInt();
+                                if ((nume > 0) || (nume < cont1)) {
+                                    System.out.println("Ingrese el nuevo estado: ");
+                                    String nam = Estado.nextLine();
+                                    if ((nam.equalsIgnoreCase("Listas")) && (nam.equalsIgnoreCase("Demolicion")) && (nam.equalsIgnoreCase("construccion"))) {
+                                        ((Edificios) Propiedades.get(nume)).setEstado(nam);
+                                    } else {
+                                        System.out.println("Variable invalida");
+                                        x--;
+                                    }
+                                } else {
+                                    System.out.println("Variable invalida");
+                                    i--;
+                                }
+                            }
+                            break;
+                        case 3:
+                            int cont22 = 0;
+                            for (int i = 0; i < Propiedades.size(); i++) {
+                                if (Propiedades.get(i) instanceof Solares) {
+                                    System.out.println(cont22 + ". " + Propiedades.get(i));
+                                    cont22 += 1;
+                                }
+                                System.out.println("Ingrese el numero: ");
+                                int nume = k1ng.nextInt();
+                                if ((nume > 0) || (nume < cont22)) {
+                                    System.out.println("Ingrese el nuevo estado: ");
+                                    String nam = Estado.nextLine();
+                                    if ((nam.equalsIgnoreCase("Listas")) && (nam.equalsIgnoreCase("Demolicion")) && (nam.equalsIgnoreCase("construccion"))) {
+                                        ((Solares) Propiedades.get(nume)).setEstado(nam);
+                                    } else {
+                                        System.out.println("Variable invalida");
+                                        x--;
+                                    }
+                                } else {
+                                    System.out.println("Variable invalida");
+                                    i--;
+                                }
+                            }
+
+                            break;
+                    }
+                    System.out.println("--Bienvenido al menu--");
+                    System.out.println("Ingrese el tipo del estado que desea cambiar");
+                    menu = k1ng.nextInt();
+
+                } else {
+                    x--;
+                    System.out.println("Invalido");
+                }
+            }
+        }
     }
 
     public static void CrearCasas() {
@@ -659,7 +784,7 @@ public class Lab2Progra2_CarlosNoé {
                         case 3:
                             int cont23 = 0;
                             for (int i = 0; i < Propiedades.size(); i++) {
-                                if (Propiedades.get(i) instanceof Edificios) {
+                                if (Propiedades.get(i) instanceof Solares) {
                                     System.out.println(cont23 + ". " + Propiedades.get(i));
                                     cont23 += 1;
                                 }
@@ -698,21 +823,21 @@ public class Lab2Progra2_CarlosNoé {
         System.out.println("Ingrese la casa que desea eliminar: ");
         int cheiss23 = k1ng.nextInt();
         if (cheiss23 < cont23) {
-            for (int i = 0; i < 1; i++) {   
-            System.out.println("Ingrese el nuevo estado ");
-            int  casaelm = k1ng.nextInt();
-            if (casaelm>0) {
-                Propiedades.remove(cont23);
-                i++;
-            }else{
-                i--;
+            for (int i = 0; i < 1; i++) {
+                System.out.println("Ingrese el nuevo estado ");
+                int casaelm = k1ng.nextInt();
+                if (casaelm > 0) {
+                    Propiedades.remove(cont23);
+                    i++;
+                } else {
+                    i--;
+                }
             }
-        }     
         }
     }
 
     public static void EliminarEdificios() {
-                Scanner k1ng = new Scanner(System.in);
+        Scanner k1ng = new Scanner(System.in);
         Scanner Estado = new Scanner(System.in);
         int cont23 = 0;
         for (int i = 0; i < Propiedades.size(); i++) {
@@ -724,16 +849,16 @@ public class Lab2Progra2_CarlosNoé {
         System.out.println("Ingrese la casa que desea eliminar: ");
         int cheiss23 = k1ng.nextInt();
         if (cheiss23 < cont23) {
-            for (int i = 0; i < 1; i++) {   
-            System.out.println("Ingrese el nuevo estado ");
-            int  casaelm = k1ng.nextInt();
-            if (casaelm>0) {
-                Propiedades.remove(cont23);
-                i++;
-            }else{
-                i--;
+            for (int i = 0; i < 1; i++) {
+                System.out.println("Ingrese el nuevo estado ");
+                int casaelm = k1ng.nextInt();
+                if (casaelm > 0) {
+                    Propiedades.remove(cont23);
+                    i++;
+                } else {
+                    i--;
+                }
             }
-        }     
         }
     }
 
@@ -750,21 +875,21 @@ public class Lab2Progra2_CarlosNoé {
         System.out.println("Ingrese la casa que desea eliminar: ");
         int cheiss23 = k1ng.nextInt();
         if (cheiss23 < cont23) {
-            for (int i = 0; i < 1; i++) {   
-            System.out.println("Ingrese el nuevo estado ");
-            int  casaelm = k1ng.nextInt();
-            if (casaelm>0) {
-                Propiedades.remove(cont23);
-                i++;
-            }else{
-                i--;
+            for (int i = 0; i < 1; i++) {
+                System.out.println("Ingrese el nuevo estado ");
+                int casaelm = k1ng.nextInt();
+                if (casaelm > 0) {
+                    Propiedades.remove(cont23);
+                    i++;
+                } else {
+                    i--;
+                }
             }
-        }     
         }
     }
 
     public static void VenderCasa() {
-        int cont23=0;
+        int cont23 = 0;
         Scanner k1ng = new Scanner(System.in);
         for (int i = 0; i < Propiedades.size(); i++) {
             if (Propiedades.get(i) instanceof Casas) {
@@ -772,21 +897,21 @@ public class Lab2Progra2_CarlosNoé {
 
             }
         }
-         for (int i = 0; i < 1; i++) {   
-        System.out.println("Ingrese la casa que desea Vender: ");
-        int cheiss23 = k1ng.nextInt();
-        if (cheiss23 > 0) {
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Ingrese la casa que desea Vender: ");
+            int cheiss23 = k1ng.nextInt();
+            if (cheiss23 > 0) {
 
                 Propiedades.remove(cheiss23);
                 i++;
-            }else{
+            } else {
                 i--;
             }
         }
     }
 
     public static void VenderEdificio() {
-        int cont23=0;
+        int cont23 = 0;
         Scanner k1ng = new Scanner(System.in);
         for (int i = 0; i < Propiedades.size(); i++) {
             if (Propiedades.get(i) instanceof Edificios) {
@@ -794,23 +919,23 @@ public class Lab2Progra2_CarlosNoé {
 
             }
         }
-         for (int i = 0; i < 1; i++) {   
-        System.out.println("Ingrese el edificio que desea Vender: ");
-        int cheiss23 = k1ng.nextInt();
-        if (cheiss23 > 0) {
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Ingrese el edificio que desea Vender: ");
+            int cheiss23 = k1ng.nextInt();
+            if (cheiss23 > 0) {
 
                 Propiedades.remove(cheiss23);
                 System.out.println("Vendido");
                 i++;
-            }else{
+            } else {
                 i--;
             }
         }
-    
+
     }
 
     public static void VenderSolar() {
-        int cont23=0;
+        int cont23 = 0;
         Scanner k1ng = new Scanner(System.in);
         for (int i = 0; i < Propiedades.size(); i++) {
             if (Propiedades.get(i) instanceof Solares) {
@@ -818,19 +943,26 @@ public class Lab2Progra2_CarlosNoé {
 
             }
         }
-         for (int i = 0; i < 1; i++) {   
-        System.out.println("Ingrese el solar que desea Vender: ");
-        int cheiss23 = k1ng.nextInt();
-        if (cheiss23 > 0) {
+        for (int i = 0; i < 1; i++) {
 
-                Propiedades.remove(cheiss23);
-                System.out.println("Vendido");
-                i++;
-            }else{
+            System.out.println("Ingrese el solar que desea Vender: ");
+            int cheiss23 = k1ng.nextInt();
+            if (cheiss23 < cont23) {
+            } else {
                 i--;
             }
-        }     
+            if (cheiss23 > 0) {
+                double pak = ((Solares) Propiedades.get(cheiss23)).getAncho() * ((Solares) Propiedades.get(cheiss23)).getLargo();
+                System.out.println(pak + " EL resultado que me pedis en el ejercicio ando totalmente muerto si lees esto puede que manana osea el sabado para mi sabes deberia dejar de escribir esta tontera pero cosas que pasa \n"
+                        + "Hola");
+                Propiedades.remove(cheiss23);
+                System.out.println("Vendido");
+
+                i++;
+            } else {
+                i--;
+            }
         }
-    
-    
+    }
+
 }
